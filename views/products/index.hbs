@@ -2,6 +2,11 @@
 
 {{#block "content"}}
 <h1>Our Products</h1>
-{{/block}}
+    <ul>
+    {{#each products}}
+        <li>{{this}}</li>
+    {{/each}}
+    </ul>
 
+{{/block}}
 {{/extends}}

@@ -19,6 +19,14 @@ app.use(express.urlencoded({
     'extended': false
 }))
 
+// custom middlewares
+app.use(function(req,res,next){
+    res.locals.date = Date();
+
+    next(); // forward the request to the next middleware
+            // or if there is no middleware,to the intended route function
+})
+
 // IMPORT IN THE ROUTES
 const landingRoutes = require('./routes/landing');
 const productRoutes = require('./routes/products');
