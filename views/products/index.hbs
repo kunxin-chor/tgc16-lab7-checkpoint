@@ -2,11 +2,27 @@
 
 {{#block "content"}}
 <h1>Our Products</h1>
-    <ul>
-    {{#each products}}
-        <li>{{this}}</li>
-    {{/each}}
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.cost}}</td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
 
 {{/block}}
 {{/extends}}
