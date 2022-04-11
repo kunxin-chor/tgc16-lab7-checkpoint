@@ -21,6 +21,9 @@ app.use(express.urlencoded({
 
 // custom middlewares
 app.use(function(req,res,next){
+    // declare a varianle named
+    // date that is available for
+    // all hbs file to access
     res.locals.date = Date();
 
     next(); // forward the request to the next middleware
