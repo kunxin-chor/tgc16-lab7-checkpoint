@@ -14,6 +14,12 @@ const Product = bookshelf.model('Product',{
     tableName:'products'
 })
 
+// name of the table = all lower case, plural
+// name of model = first alphabet upper case, singular
+const Brand = bookshelf.model('Brand',{
+    tableName: 'brands'
+})
+
 module.exports = {
-    Product
+    Product, Brand
 }

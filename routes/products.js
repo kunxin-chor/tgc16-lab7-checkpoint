@@ -1,7 +1,7 @@
 const express = require('express');
 
 // import in the Product model
-const {Product} = require('../models')
+const {Product, Brand} = require('../models')
 
 // create the new router
 const router = express.Router();
@@ -15,6 +15,13 @@ router.get('/', async (req,res)=>{
         'products':products.toJSON() // convert the results to JSON
     })
   
+})
+
+router.get('/brands', async (req,res)=>{
+    let brands = await Brand.collection().fetch();
+    res.render('products/brands', {
+        'brands': brands.toJSON()
+    })
 })
 
 module.exports = router;
